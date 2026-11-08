@@ -1,0 +1,6 @@
+# SSH Manager: one Host row that owns the saved server store, the agent tools,
+# and the authenticated settings route. The Client half is declared in
+# package.json's `dsh.client` section.
+- insert:
+    - id: ssh-manager
+      name: '@local/dsh-ssh-manager'

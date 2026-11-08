@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "SSH servers",
+    "description": "Saves SSH server connections so the agent can test them, run commands, and transfer files directly."
+  }
+}

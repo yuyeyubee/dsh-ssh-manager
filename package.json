@@ -1,0 +1,52 @@
+{
+  "name": "@local/dsh-ssh-manager",
+  "version": "1.1.0",
+  "private": true,
+  "description": "SSH server manager for DeepSeek Harness: save servers in Settings, attach one with @, and run agent commands on it.",
+  "license": "MIT",
+  "author": "yuyeyubee",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuyeyubee/dsh-ssh-manager.git"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "ssh",
+    "scp",
+    "plugin",
+    "ssh-manager"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-input-trigger",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
