@@ -4,6 +4,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+**中文** | [English](README.en.md)
+
 一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）插件。它在「设置 → SSH 服务器」里保存 SSH 连接，并把保存的服务器接入对话输入框的 `@` 候选菜单。选中服务器后，整个会话就绑定到该服务器，AI 通过 `ssh_exec` 执行命令、通过 `ssh_upload` / `ssh_download` 传输文件。
 
 适合把 DSH 当作远程运维助手：在聊天里直接看日志、查磁盘、看进程、部署服务，而不需要反复手输 `ssh user@host`。
@@ -24,11 +26,11 @@
 
 ```mermaid
 flowchart LR
-  A[设置 → SSH 服务器] -->|保存配置 + 凭据| B[输入框输入 @]
-  B -->|选择服务器| C[会话绑定]
-  C -->|所有 shell 命令| D[ssh_exec]
-  C -->|传文件| E[ssh_upload / ssh_download]
-  C -->|切换| F[@ 本机 / 新会话]
+  A["设置 → SSH 服务器"] -->|保存配置 + 凭据| B["输入框输入 @"]
+  B -->|选择服务器| C["会话绑定"]
+  C -->|所有 shell 命令| D["ssh_exec"]
+  C -->|传文件| E["ssh_upload / ssh_download"]
+  C -->|切换| F["@ 本机 / 新会话"]
 ```
 
 ## 安装
@@ -188,12 +190,6 @@ node --check client.js
 2. 输入 `@` 选择服务器；
 3. 在对话中执行命令、上传、下载；
 4. 选择「本机」确认恢复本地执行。
-
-## English overview
-
-**DSH SSH Manager** is a plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). It stores SSH server profiles in Settings and exposes them in the composer's `@` menu. Pick a server once and every shell command in that conversation runs on it through the `ssh_exec` tool; `ssh_upload` / `ssh_download` move files over SCP. Passwords and key passphrases live in DSH's local credential store and never enter the chat log. A guard blocks the local `bash` tool while a server is attached.
-
-Requirements: DSH Web/Desktop, macOS or Linux with system OpenSSH. No npm dependencies.
 
 ## License
 
